@@ -1,0 +1,21 @@
+{
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["gdev", "elasticsearch", "datasource-test"],
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Datasource tests - Elasticsearch complex with template variables",
+  "uid": "es_complex",
+  "version": 1,
+  "weekStart": ""
+}
