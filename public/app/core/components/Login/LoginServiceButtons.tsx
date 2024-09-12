@@ -22,6 +22,12 @@ const loginServices: () => LoginServices = () => {
   const oauthEnabled = !!config.oauth;
 
   return {
+    lark: {
+      bgColor: '#27d8bc',
+      enabled: oauthEnabled && Boolean(config.oauth.lark),
+      name: config.oauth?.lark?.name || 'Lark',
+      icon: config.oauth?.lark?.icon || ('lark' as const),
+    },
     saml: {
       bgColor: '#464646',
       enabled: config.samlEnabled,

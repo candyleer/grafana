@@ -149,6 +149,15 @@ func ProvideService(cfg *setting.Cfg,
 			Scopes:      info.Scopes,
 		}
 
+		if name == "lark" {
+			ss.socialMap["lark"] = &SocialLark{
+				SocialBase:        newSocialBase(name, &config, info, cfg.AutoAssignOrgRole, cfg.OAuthSkipOrgRoleUpdateSync, *features),
+				hostedDomain:      info.HostedDomain,
+				apiUrl:            info.ApiUrl,
+				appAccessTokenUrl: info.TeamsUrl,
+			}
+		}
+
 		// GitHub.
 		if name == "github" {
 			ss.socialMap["github"] = &SocialGithub{
@@ -301,7 +310,7 @@ const (
 var (
 	SocialBaseUrl = "/login/"
 	SocialMap     = make(map[string]SocialConnector)
-	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "grafananet", grafanaCom, "azuread", "okta"}
+	allOauthes    = []string{"lark", "github", "gitlab", "google", "generic_oauth", "grafananet", grafanaCom, "azuread", "okta"}
 )
 
 type Service interface {

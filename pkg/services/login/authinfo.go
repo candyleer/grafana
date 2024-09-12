@@ -50,6 +50,7 @@ const (
 	GrafanaComAuthModule = "oauth_grafana_com"
 	GrafanaNetAuthModule = "oauth_grafananet"
 	OktaAuthModule       = "oauth_okta"
+	LarkAuthModule       = "oauth_lark"
 
 	// labels
 	SAMLLabel = "SAML"
@@ -64,6 +65,7 @@ const (
 	GithubLabel       = "GitHub"
 	GrafanaComLabel   = "grafana.com"
 	OktaLabel         = "Okta"
+	LarkLabel         = "Lark"
 )
 
 // IsExternnalySynced is used to tell if the user roles are externally synced
@@ -162,6 +164,8 @@ func GetAuthProviderLabel(authModule string) string {
 		return AuthProxyLabel
 	case GenericOAuthModule:
 		return GenericOAuthLabel
+	case LarkAuthModule:
+		return LarkLabel
 	default:
 		return "Unknown"
 	}
